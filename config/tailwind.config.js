@@ -45,7 +45,7 @@ module.exports = {
       pink: colors.pink,
       rose: colors.rose,
       peach: '#FBA400',
-      viridian: 'rgb(0 130 148)'
+      viridian: '#008294'
     }),
     columns: {
       auto: 'auto',
