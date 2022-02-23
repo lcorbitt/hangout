@@ -1,13 +1,23 @@
 .homepage {
   .pill {
     border-radius: 40px;
-    font-size: 14px;
     line-height: 1;
     padding: 1rem;
     cursor: pointer;
     color: #fff;
     fill: #fff;
-    // background-color: #008294;
-    // border-color: #008294;
+  }
+
+  @media (max-width: 768px) {
+    .service {
+      background: #f6f7f8;
+      padding-bottom: 30px;
+      border-radius: 8px;
+      width: calc(33.3333% - 5px);
+    }
+
+    .service:not(:last-child) {
+      margin: 0 5px 0 0;
+    }
   }
 }

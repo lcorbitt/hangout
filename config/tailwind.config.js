@@ -44,8 +44,8 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
-      peach: '#FBA400',
-      viridian: '#008294'
+      peach: '#EF4444',
+      viridian: '#0D9488'
     }),
     columns: {
       auto: 'auto',
