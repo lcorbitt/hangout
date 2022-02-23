@@ -1,1 +1,5 @@
-<%= react_component("Header", { currentUserId: current_user&.id}) %>
+<% if current_user %>
+  <%= react_component("MemberHeader", { currentUserId: current_user&.id}) %>
+<% else %>
+  <%= react_component("PublicHeader", { currentUserId: current_user&.id}) %>
+<% end %>

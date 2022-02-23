@@ -1,30 +1,44 @@
-<div class="curved-upper border-none outline-none bg-zinc-800 -ml-4 -mr-4 sm:-ml-6 sm:-mr-6 md:-ml-8 md:-mr-8">
+<%# <div class="curved-upper border-none outline-none bg-zinc-800 -ml-4 -mr-4 sm:-ml-6 sm:-mr-6 md:-ml-8 md:-mr-8">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,160L40,170.7C80,181,160,203,240,192C320,181,400,139,480,122.7C560,107,640,117,720,138.7C800,160,880,192,960,192C1040,192,1120,160,1200,144C1280,128,1360,128,1400,128L1440,128L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-</div>
-<div class="curved bg-zinc-800 -ml-4 -mr-4 sm:-ml-6 sm:-mr-6 md:-ml-8 md:-mr-8 -mt-4 lg:-mt-8">
-  <div class="content-container">
+</div> %>
+
+<%# <%= image_tag "wave.svg", class: "-ml-4 -mr-4 sm:-ml-6 sm:-mr-6 md:-ml-8 md:-mr-8 absolute" %>
+
+<div class="curved bg-zinc-800 -ml-4 -mr-4 sm:-ml-6 sm:-mr-6 md:-ml-8 md:-mr-8 px-4 sm:px-6 md:px-8">
+  <div class="max-w-6xl mx-auto flex mb-10">
+    <a data-element-name="joinMeetup-CTA" data-testid="join-meetup-button" class="w-full md:w-auto rounded-lg cursor-pointer text-white py-2 px-4 bg-zinc-800 border border-white border-solid float-left md:float-none inline-block hover:no-underline hover:opacity-80" href="https://www.meetup.com/register/">Start a new group</a>
+  </div>
+
+  <hr/>
+
+  <div class="content-container mt-6">
     <div class="max-w-6xl m-auto flex flex-wrap justify-between text-left">
-      <div class="py-4 px-4 sm:px-6 md:px-8 w-48 ">
+      <div class="py-5 w-48">
         <div class="text-white">Your Account</div>
-        <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Sign up <span class="text-gray-400 text-xs p-1"></span></a>
-        <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Log in <span class="text-teal-600 text-xs p-1"></span></a>
+        <% if u&.signed_in? %>
+          <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Sign up <span class="text-gray-400 text-xs p-1"></span></a>
+          <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Log in <span class="text-teal-600 text-xs p-1"></span></a>
+        <% else %>
+          <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Settings <span class="text-gray-400 text-xs p-1"></span></a>
+          <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Log out <span class="text-teal-600 text-xs p-1"></span></a>
+        <% end %>
         <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Help <span class="text-teal-600 text-xs p-1"></span></a>
       </div>
-      <div class="p-5 w-48 ">
+      <div class="py-5 w-48">
         <div class="text-white">Discover</div>
         <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Groups <span class="text-teal-600 text-xs p-1"></span></a>
         <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Events <span class="text-teal-600 text-xs p-1"></span></a>
         <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Topics <span class="text-teal-600 text-xs p-1"></span></a>
         <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">Cities <span class="text-teal-600 text-xs p-1"></span></a>
       </div>
-      <div class="p-5 w-48 ">
+      <div class="py-5 w-48">
         <div class="text-white">Hangout</div>
         <a class="text-xs my-3 block text-gray-400 hover:text-white" href="/#">About <span class="text-teal-600 text-xs p-1"></span></a>
       </div>
     </div>
   </div>
 
-  <div class="flex pb-5 px-4 sm:px-6 md:px-8 m-auto pt-5 border-t border-gray-500 text-sm flex-col md:flex-row max-w-6xl">
+  <div class="flex pb-5 m-auto pt-5 text-sm flex-col md:flex-row max-w-6xl">
     <div>© Copyright 2020. All Rights Reserved.</div>
     <%# <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
       <a href="/#" class="w-6 mx-1">
