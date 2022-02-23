@@ -134,9 +134,44 @@
         </div>
       </div>
     </div>
+
+    <div class="block sm:hidden overflow-x-hidden">
+      <div class="grid grid-rows lg:ml-8">
+        <h2 class="hidden sm:block text-3xl font-bold mb-5">See what’s happening</h2>
+        <div class="md:h-auto w-100 flex-wrap md:max-w-xl lg:max-w-full overflow-x-scroll overflow-y-hidden -mx-6 sm:-mx-4 md:mx-0">
+          <div class="flex flex-wrap w-max md:w-auto px-6 sm:px-4 md:px-0 dfarcjx">
+            <%= render 'quick_search_pill', term: "Starting soon" %>
+            <%= render 'quick_search_pill', term: "Today" %>
+            <%= render 'quick_search_pill', term: "Tomorrow" %>
+            <%= render 'quick_search_pill', term: "This week" %>
+          </div>
+          <div class="flex flex-wrap w-max md:w-auto px-6 sm:px-4 md:px-0 dfarcjx">
+            <%= render 'quick_search_pill', term: "Online" %>
+            <%= render 'quick_search_pill', term: "In person" %>
+            <%= render 'quick_search_pill', term: "Trending near you" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden sm:block lg:hidden overflow-x-hidden">
+      <h2 class="hidden sm:block text-3xl font-bold mb-5">See what’s happening</h2>
+      <div class="md:h-auto w-screen lg:max-w-full overflow-x-auto overflow-y-hidden -mx-6 sm:-mx-4 md:mx-0">
+        <div class="flex flex-nowrap px-6 sm:px-4 md:px-0 max-w-max w-max dfarcjx">
+          <%= render 'quick_search_pill', term: "Starting soon" %>
+          <%= render 'quick_search_pill', term: "Today" %>
+          <%= render 'quick_search_pill', term: "Tomorrow" %>
+          <%= render 'quick_search_pill', term: "This week" %>
+          <%= render 'quick_search_pill', term: "Online" %>
+          <%= render 'quick_search_pill', term: "In person" %>
+          <%= render 'quick_search_pill', term: "Trending near you" %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="md:max-w-screen w-full pl-4 sm:px-4 xl:px-0">
+
+  <div class="md:max-w-screen w-full">
     <div class="text-center overflow-hidden">
       <h2 class="outfit text-left sm:text-center text-2xl sm:text-3xl font-semibold mb-2">How Hangout works</h2>
       <p class="text-left sm:text-center w-full sm:w-2/3 lg:w-1/2 mb-10 mx-auto">Meet new people who share your interests through online and in-person events. It’s free to create an account.</p>
