@@ -16,6 +16,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import Logo from 'images/logo.png'
 
 const solutions = [
   {
@@ -83,13 +84,13 @@ export default function Header({ currentUserId }) {
   return (
     <Popover className="relative bg-white mb-10">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center border-b-2 border-gray-100 py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="#">
               <span className="sr-only">Hangout</span>
               <img
-                className="h-8 w-auto sm:h-10"
-                src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                className="h-10 w-auto sm:h-12"
+                src={Logo}
                 alt=""
               />
             </a>
