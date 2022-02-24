@@ -80,11 +80,11 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Header({ currentUserId }) {
+export default function PublicHeader() {
   return (
     <Popover className="relative bg-white mb-10">
       <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center border-b-2 border-gray-100 py-2 md:justify-start md:space-x-10">
+        <div className="flex justify-between items-center border-b-2 border-gray-100 py-3 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <a href="/">
               <span className="sr-only">Hangout</span>
@@ -250,12 +250,12 @@ export default function Header({ currentUserId }) {
             </Popover>
           </Popover.Group> */}
           <div className="flex items-center justify-end md:flex-1 lg:w-0">
-            <a href="/users/sign_in" className="whitespace-nowrap text-xs font-semibold text-gray-500 hover:text-gray-900">
+            <a href="/users/sign_in" className="whitespace-nowrap text-sm font-semibold text-gray-500 hover:text-gray-900">
               Log in
             </a>
             <a
               href="/users/sign_up"
-              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-xs font-semibold text-white bg-indigo-600 hover:opacity-80"
+              className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white bg-indigo-600 hover:opacity-80"
             >
               Sign up
             </a>

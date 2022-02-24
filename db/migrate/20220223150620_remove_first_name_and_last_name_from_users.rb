@@ -1,0 +1,8 @@
+class RemoveFirstNameAndLastNameFromUsers < ActiveRecord::Migration[6.0]
+  def change
+    change_table(:users) do |t|
+      t.remove :first_name
+      t.remove :last_name
+    end
+  end
+end
