@@ -81,8 +81,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function MemberHeader({ currentUser }) {
+export default function MemberHeader({ avatarUrl }) {
   return (
+    console.log('avatarUrl: ' + avatarUrl),
     <Popover className="relative bg-white mb-10">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-2 md:space-x-10">
@@ -105,7 +106,7 @@ export default function MemberHeader({ currentUser }) {
             </Popover.Button>
           </div>
 
-          <Popover.Group as="nav" className="hidden md:flex space-x-4">
+          <Popover.Group as="nav" className="hidden md:flex space-x-4 items-center">
             {/* <Popover className="relative">
               {({ open }) => (
                 <>
@@ -171,29 +172,33 @@ export default function MemberHeader({ currentUser }) {
               )}
             </Popover> */}
 
-            <a href="#" className="text-xs font-semibold mt-[8px]">
+            <a href="#" className="text-xs font-semibold">
               <SearchIcon className="flex-shrink-0 h-5 w-5 text-gray-500 hover:text-gray-900" />
             </a>
 
-            <a href="#" className="text-xs font-semibold mt-[8px]">
+            <a href="#" className="text-xs font-semibold">
               <ChatAltIcon className="flex-shrink-0 h-5 w-5 text-gray-500 hover:text-gray-900" />
             </a>
 
-            <a href="#" className="text-xs font-semibold mt-[8px]">
+            <a href="#" className="text-xs font-semibold">
               <BellIcon className="flex-shrink-0 h-5 w-5 text-gray-500 hover:text-gray-900" />
             </a>
 
-            <Popover className="relative">
+            <Popover className="relative -mb-4">
               {({ open }) => (
                 <>
                   <Popover.Button
                     className={classNames(
                       open ? 'text-gray-900' : 'text-gray-500',
-                      'group bg-white mt-[8px] rounded-md inline-flex items-center text-xs font-semibold hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+                      'group bg-white rounded-md inline-flex items-center text-xs font-semibold hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                     )}
                   >
                     {/* <span>Avatar</span> */}
-                    <UserIcon className="flex-shrink-0 h-5 w-5 text-gray-500 hover:text-gray-900" />
+                    {/* <UserIcon className="flex-shrink-0 h-5 w-5 text-gray-500 hover:text-gray-900" /> */}
+
+                    <span id="avatar_img" className="overflow-hidden bg-gray-200 mx-auto h-10 w-10 bg-center bg-cover items-center inline-flex relative align-middle" style={{borderRadius: '999px'}}>
+                      <img src={avatarUrl} />
+                    </span>
 
                     <ChevronDownIcon
                       className={classNames(

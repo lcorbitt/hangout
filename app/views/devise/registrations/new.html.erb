@@ -68,6 +68,38 @@
             <h1 class="outfit text-left text-2xl sm:text-3xl font-semibold mb-2">Sign up</h1>
           </div>
           <div class="w-full flex flex-col space-y-6 mb-4 mt-8">
+            <%# <section class="section"><h1 class="text--display3 margin--bottom register-photoHeader"><span>Welcome</span></h1><p class="register-photo-subheader"><span>Add a photo so other members know who you are.</span></p><div class="chunk margin--top"><span class="avatar avatar--xxlarge avatar--person avatar--noPhoto" role="img" aria-label="Lou Corbitt"><span class="visibility--a11yHide">Lou Corbitt</span><span class="avatarIcon--noPhoto display--inlineFlex"><svg preserveAspectRatio="xMinYMin meet" width="36" height="36" viewBox="0 0 36 36" class="svg svg--profile svg-icon valign--middle" role="img"><use xlink:href="#icon-profile"></use></svg></span></span></div><div class="chunk"><div><form><a class="register-upload-photo button button--primary button--fullWidth"><span>Upload a photo</span></a></form><div class="margin--top"><p class="register-orDivider margin--bottom align--center"><span>Or</span></p><span style="transition: opacity 0.5s ease 0s;"><button type="button" class="button register-fb-photo-button button--fullWidth metro"><span><svg preserveAspectRatio="xMinYMin meet" width="24" height="24" viewBox="0 0 24 24" class="svg svg--external-facebook svg-icon valign--middle" role="img"><use xlink:href="#icon-external-facebook"></use></svg></span>Connect with Facebook</button></span></div><p class="margin--top"><a class="register-skip-photo" href="/welcome/goal/"><span>Skip for now</span></a></p></div></div></section> %>
+
+            <div class="flex flex-col-reverse">
+              <div id="name-error" class="text-xs text-gray mt-1">
+                <span class="sr-only">Error:&nbsp;</span>
+                Add a photo so other members know who you are
+              </div>
+              <%# <input aria-required="true" data-testid="name" type="text" autocomplete="name" id="name" name="name" class="w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" value="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" aria-describedby="name-error"> %>
+              <%# <%= f.file_field "avatar", accept: "image/png,image/jpeg", id: "sign_up_avatar_input", class: "w-full h-10 mt-8 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" %>
+
+              <label id="sign_up_upload_label" class="p-2 bg-peach text-center text-white rounded mt-4 hover:cursor-pointer transition ease-in-out delay-75 hover:opacity-80">
+                Upload a photo
+                <span style="display:none;">
+                  <%= f.file_field :avatar, accept: "image/png,image/jpeg", id: "sign_up_avatar_input" %>
+                </span>
+              </label>
+
+              <div class="w-full flex flex-row items-baseline justify-between">
+                <%# <label class="mb-1 font-medium ds-font-body-medium" for="name">
+                  Your name
+                </label> %>
+                <%# <%= f.label :name, "Your name", class: "mb-1 font-medium" %>
+              </div>
+
+              <span id="avatar_img" class="overflow-hidden bg-gray-200 mx-auto h-[120px] w-[120px] bg-center bg-cover items-center inline-flex relative align-middle" style="border-radius: 999px;">
+                <img src="<%= image_url('avatar.svg')%>" id="sign_up_no_avatar" class="w-full rounded-lg" style="top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:5rem;max-width:100%;min-height:5rem;max-height:100%;object-fit:cover">
+
+                <img id="sign_up_avatar_preview" />
+              </span>
+
+            </div>
+
             <div class="flex flex-col-reverse">
               <div id="name-error" class="hidden text-xs text-red mt-1">
                 <span class="sr-only">Error:&nbsp;</span>
@@ -78,7 +110,7 @@
                 Your name will be public on your Hangout profile
               </div>
               <%# <input aria-required="true" data-testid="name" type="text" autocomplete="name" id="name" name="name" class="w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" value="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" aria-describedby="name-error"> %>
-              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", required: true, class: "w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" %>
 
               <div class="w-full flex flex-row items-baseline justify-between">
                 <%# <label class="mb-1 font-medium ds-font-body-medium" for="name">
@@ -95,7 +127,7 @@
               <%= f.email_field :email, autocomplete: "email", placeholder: "example@email.com", class: "transition-colors w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" %>
               <%# <input aria-required="true" type="email" data-testid="email" placeholder="example@email.com" inputmode="email" class="transition-colors w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" id="email" name="email" value=""> %>
               <div class="w-full flex flex-row items-baseline justify-between">
-                <%= f.label :email, "Email address", class: "mb-1 font-medium" %>
+                <%= f.label :email, "Email address", required: true, class: "mb-1 font-medium" %>
 <%#
                 <label class="mb-1 font-medium" for="email">
                   Email address
@@ -258,3 +290,5 @@
     </div>
   </div>
 </div>
+
+<%# <%= javascript_pack_tag 'sign_up' %>
