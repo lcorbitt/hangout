@@ -1,0 +1,120 @@
+<div class="flex flex-col flex-grow">
+  <div id="main" class="flex flex-col items-center flex-grow">
+    <div class="px-6 sm:px-4 xl:px-0 md:max-w-screen w-full flex flex-col items-center mb-16">
+      <div class="flex flex-col w-full md:flex-row md:space-x-8">
+        <div id="profile-photo" class="flex w-full justify-center">
+          <div class="xs:block sm:hidden">
+            <picture>
+              <img alt="Photo of <%= current_user.name.split(' ')[0] %>" src="<%= current_user.avatar.service_url %>" style="width:128px;height:128px" loading="eager" class="rounded-full object-cover mb-4 block">
+            </picture>
+          </div>
+          <div class="flex justify-center hidden sm:block md:hidden">
+            <picture>
+              <img alt="Photo of <%= current_user.name.split(' ')[0] %>" src="<%= current_user.avatar.service_url %>" style="width:256px;height:256px" loading="eager" class="rounded-full object-cover mb-8">
+            </picture>
+          </div>
+          <div class="w-full hidden md:block">
+            <div class="w-full mt-11 flex flex-row justify-end">
+              <picture class="w-full max-w-[352px]">
+                <img alt="Photo of <%= current_user.name.split(' ')[0] %>" src="<%= current_user.avatar.service_url %>" style="width:100%;height:100%" loading="eager" class="rounded-full object-cover max-w-[352px] max-h-[352px] min-h-[352px]">
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div id="profile-details" class="flex flex-col w-full items-center md:items-start">
+          <h1 id="profile-name" class="outfit text-4xl sm:text-5xl font-bold mb-1 sm:mb-5 text-center md:text-left"><%= current_user.name.titleize %> </h1>
+          <span id="profile-since-date" class="text-base sm:text-xl font-semibold mt-2 text-center mb-4">Member since <%= current_user.created_at.strftime('%B') %> <%= current_user.created_at.strftime('%Y') %></span>
+          <div class="flex flex-col items-center md:items-start space-y-2">
+            <%# <div id="profile-location" class="flex flex-row space-x-2 items-center fill-current text-gray6 font-normal">
+              <div style="width:20px;height:20px">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg text-gray6 fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/map-marker.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:20px;height:20px">
+                    <title>icon</title>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.015 21.3588C17.4032 18.4382 20 14.6519 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 14.6519 6.59679 18.4382 10.985 21.3588C11.5999 21.7681 12.4001 21.7681 13.015 21.3588ZM12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-gray6">Denver</span>
+            </div> %>
+            <%# <div id="profile-events-count" class="flex flex-row space-x-2 items-center fill-current text-gray6 font-normal">
+              <div style="width:20px;height:20px">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg text-gray6 fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/group.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:20px;height:20px">
+                    <title>icon</title>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0016 9.87358C9.68148 9.9561 9.34586 10 9 10C6.79086 10 5 8.20914 5 6C5 3.79086 6.79086 2 9 2C11.0169 2 12.6851 3.49272 12.9602 5.43364C11.2518 6.19794 10.0507 7.8928 10.0016 9.87358ZM10.1163 11.0773C9.75153 11.0263 9.37884 11 9 11C6.74662 11 4.71084 11.9317 3.25684 13.4308C3.08717 13.6057 3 13.8428 3 14.0865V16C3 16.5523 3.44772 17 4 17H8.51082C9.6289 15.7637 11.0166 14.8439 12.5634 14.3672C11.3354 13.6805 10.4268 12.491 10.1163 11.0773ZM19 10C19 12.2091 17.2091 14 15 14C12.7909 14 11 12.2091 11 10C11 7.79086 12.7909 6 15 6C17.2091 6 19 7.79086 19 10ZM21 18.0865C21 17.8428 20.9128 17.6057 20.7432 17.4308C19.2892 15.9317 17.2534 15 15 15C12.7466 15 10.7108 15.9317 9.25684 17.4308C9.08717 17.6057 9 17.8428 9 18.0865V20C9 20.5523 9.44771 21 10 21H20C20.5523 21 21 20.5523 21 20V18.0865Z"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-gray6">Attended 0 Events</span>
+            </div> %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="profile-sticky-actions" class="w-full border-b border-t border-solid border-gray2 flex flex-col items-center sticky bg-white z-10">
+      <div class="px-6 sm:px-4 xl:px-0 md:max-w-screen py-4 w-full flex flex-row justify-between">
+        <div class="flex flex-row space-x-2 md:space-x-4 items-center">
+          <a id="nav-groups" href="#groups" class="font-normal hover:no-underline hover:text-viridian hover:font-bold text-center space-x-2" data-element-name="nav-groups">
+            <div class="hidden xs:inline-block bg-viridian text-white text-sm rounded-full px-2 pt-0.5">0</div>
+            <span>Groups</span>
+          </a>
+          <a id="nav-interests" href="#interests" class="font-normal hover:no-underline hover:text-viridian hover:font-bold text-center space-x-2 inline" data-element-name="nav-interests">
+            <div class="hidden xs:inline-block bg-viridian text-white text-sm rounded-full px-2 pt-0.5">7</div>
+            <span>Interests</span>
+          </a>
+        </div>
+        <div class="flex flex-row items-center">
+          <a id="edit-profile-button" href="/users/<%= current_user.id %>/edit" class="text-white rounded-lg bg-peach px-2 xs:px-4 py-2 ml-4 hover:cursor-pointer transition ease-in-out delay-75 hover:opacity-80" data-element-name="edit-profile">Edit profile</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center w-full space-y-12 lg:space-y-20 mt-12 lg:mt-16 mb-14 md:mb-28">
+      <div class="px-6 sm:px-4 xl:px-0 md:max-w-screen w-full flex flex-col">
+        <a class="invisible relative block -top-36" id="groups"></a>
+        <h2 id="groups-title" class="text-3xl font-bold mb-6">Groups</h2>
+        <div id="empty-groups" class="flex flex-col items-center dlayde2 self-center mt-10">
+          <div class="mb-5">
+            <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+              <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
+                <img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27166%27%20height=%27144%27/%3e">
+              </span>
+              <img src="https://secure.meetupstatic.com/next/images/home/EmptyGroup.svg?w=384" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" srcset="https://secure.meetupstatic.com/next/images/home/EmptyGroup.svg?w=256 1x, https://secure.meetupstatic.com/next/images/home/EmptyGroup.svg?w=384 2x">
+            </span>
+          </div>
+          <div class="text-xl font-bold mb-2">No groups joined</div>
+          <div class="font-normal mb-4 text-center">All groups you join and organize will be shown here.</div>
+          <a data-element-name="find-groups" href="https://www.meetup.com/find/?source=GROUPS" class="b1yexj96">Find Groups</a>
+        </div>
+      </div>
+      <div class="px-6 sm:px-4 xl:px-0 md:max-w-screen w-full flex flex-col space-y-6">
+        <a class="invisible relative block -top-32" id="interests"></a>
+        <h2 id="interests-title" class="text-3xl font-bold">Interests</h2>
+        <ul id="profile-interests" class="flex flex-row flex-wrap">
+          <li class="mb-4 mr-4 flex">
+            <a id="interest-related-topics" target="_blank" rel="noreferrer" data-element-name="interest-related-topics" href="https://www.meetup.com/find/?keywords=Web%20Design" class="bg-viridian py-1 px-2 rounded-md hover:no-underline font-medium text-white a1y7rj8i">Web Design</a>
+          </li>
+          <li class="mb-4 mr-4 flex">
+            <a id="interest-related-topics" target="_blank" rel="noreferrer" data-element-name="interest-related-topics" href="https://www.meetup.com/find/?keywords=Professional%20Development" class="bg-viridian py-1 px-2 rounded-md hover:no-underline font-medium text-white a1y7rj8i">Professional Development</a>
+          </li>
+          <li class="mb-4 mr-4 flex">
+            <a id="interest-related-topics" target="_blank" rel="noreferrer" data-element-name="interest-related-topics" href="https://www.meetup.com/find/?keywords=Philanthropy" class="bg-viridian py-1 px-2 rounded-md hover:no-underline font-medium text-white a1y7rj8i">Philanthropy</a>
+          </li>
+          <li class="mb-4 mr-4 flex">
+            <a id="interest-related-topics" target="_blank" rel="noreferrer" data-element-name="interest-related-topics" href="https://www.meetup.com/find/?keywords=Web%20Technology" class="bg-viridian py-1 px-2 rounded-md hover:no-underline font-medium text-white a1y7rj8i">Web Technology</a>
+          </li>
+          <li class="mb-4 mr-4 flex">
+            <a id="interest-related-topics" target="_blank" rel="noreferrer" data-element-name="interest-related-topics" href="https://www.meetup.com/find/?keywords=Community%20Outreach" class="bg-viridian py-1 px-2 rounded-md hover:no-underline font-medium text-white a1y7rj8i">Community Outreach</a>
+          </li>
+          <li class="mb-4 mr-4 flex">
+            <a id="interest-related-topics" target="_blank" rel="noreferrer" data-element-name="interest-related-topics" href="https://www.meetup.com/find/?keywords=Computer%20Programming" class="bg-viridian py-1 px-2 rounded-md hover:no-underline font-medium text-white a1y7rj8i">Computer Programming</a>
+          </li>
+          <li class="mb-4 mr-4 flex">
+            <a id="interest-related-topics" target="_blank" rel="noreferrer" data-element-name="interest-related-topics" href="https://www.meetup.com/find/?keywords=Blockchain" class="bg-viridian py-1 px-2 rounded-md hover:no-underline font-medium text-white a1y7rj8i">Blockchain</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

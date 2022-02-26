@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+@font-face {
+  font-family: 'Outfit';
+  src: font_url('Outfit-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .outfit {
-  font-family: "Outfit", sans-serif;
+  font-family: "Outfit-Regular", sans-serif;
 }
 
 .text-gray {
   color: #6B7280;
+}
+
+.alert-success {
+  color: white;
+  text-align: center;
+  background-color: #4ADE80;
+  padding: 0.5rem;
 }

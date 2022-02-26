@@ -26,62 +26,67 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import Logo from 'images/logo.png'
 
-const solutions = [
-  {
-    name: 'Home',
-    href: '#',
-    icon: HomeIcon,
-  },
-  {
-    name: 'Your events',
-    href: '#',
-    icon: TicketIcon,
-  },
-  { name: 'Your groups',
-    href: '#',
-    icon: UserGroupIcon
-  },
-  {
-    name: 'Messages',
-    href: '#',
-    icon: ChatAltIcon,
-  },
-  {
-    name: 'Notifications',
-    href: '#',
-    icon: BellIcon,
-  },
-  {
-    name: 'Settings',
-    href: '#',
-    icon: CogIcon,
-  }
-]
-const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
-const resources = [
-  {
-    name: 'Your events',
-    href: '#'
-  },
-  {
-    name: 'Your groups',
-    href: '#'
-  }
-]
-const actions = [
-  { id: 1, name: 'View profile', href: '#', method: 'get' },
-  { id: 2, name: 'Settings', href: '#', method: 'get' },
-  { id: 3, name: 'Log out', href: '/users/sign_out', method: 'delete' },
-]
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function MemberHeader({ avatarUrl }) {
+export default function MemberHeader({ avatarUrl, userId }) {
+  const solutions = [
+    {
+      name: 'Home',
+      href: '#',
+      icon: HomeIcon,
+    },
+    {
+      name: 'View Profile',
+      href: `/users/${userId}`,
+      icon: UserIcon,
+    },
+    {
+      name: 'Your events',
+      href: '#',
+      icon: TicketIcon,
+    },
+    { name: 'Your groups',
+      href: '#',
+      icon: UserGroupIcon
+    },
+    {
+      name: 'Messages',
+      href: '#',
+      icon: ChatAltIcon,
+    },
+    {
+      name: 'Notifications',
+      href: '#',
+      icon: BellIcon,
+    },
+    {
+      name: 'Settings',
+      href: '#',
+      icon: CogIcon,
+    }
+  ]
+  // const callsToAction = [
+  //   { name: 'Watch Demo', href: '#', icon: PlayIcon },
+  //   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
+  // ]
+  const resources = [
+    {
+      name: 'Your events',
+      href: '#'
+    },
+    {
+      name: 'Your groups',
+      href: '#'
+    }
+  ]
+  const actions = [
+    { id: 1, name: 'View profile', href: `/users/${userId}`, method: 'get' },
+    { id: 2, name: 'Settings', href: '#', method: 'get' },
+    { id: 3, name: 'Log out', href: '/users/sign_out', method: 'delete' },
+  ]
+
   return (
     console.log('avatarUrl: ' + avatarUrl),
     <Popover className="relative bg-white mb-10">
