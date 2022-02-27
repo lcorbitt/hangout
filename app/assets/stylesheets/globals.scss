@@ -16,9 +16,16 @@
   color: #6B7280;
 }
 
-.alert-success {
+.alert {
   color: white;
   text-align: center;
-  background-color: #4ADE80;
   padding: 0.5rem;
+}
+
+.alert-danger {
+  background-color: #EF4444;
+}
+
+.alert-success {
+  background-color: #4ADE80;
 }

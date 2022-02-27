@@ -88,7 +88,6 @@ export default function MemberHeader({ avatarUrl, userId }) {
   ]
 
   return (
-    console.log('avatarUrl: ' + avatarUrl),
     <Popover className="relative bg-white mb-10">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center border-b-2 border-gray-100 py-2 md:space-x-10">
@@ -331,7 +330,7 @@ export default function MemberHeader({ avatarUrl, userId }) {
               </div>
               <div>
                 <a
-                  href="users/sign_out"
+                  href="/users/sign_out"
                   data-method="delete"
                   className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-peach transition ease-in-out delay-75 hover:opacity-80"
                 >

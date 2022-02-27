@@ -94,7 +94,7 @@
 
             <div class="flex space-x-1 justify-center text-sm">
               <span>Not a member yet?</span>
-              <a class="hover:no-underline text-viridian" href="/users/" data-element-name="register-log-in-link">Sign up</a>
+              <a class="hover:no-underline text-viridian" href="/users/sign_up" data-element-name="register-log-in-link">Sign up</a>
             </div>
           </div>
           <div class="w-full flex flex-col space-y-6 mb-4 mt-8">
@@ -148,7 +148,7 @@
             </div>
 
             <% if devise_mapping.rememberable? %>
-              <div class="field ">
+              <div class="field text-sm">
                 <%= f.check_box :remember_me %>
                 <%= f.label :remember_me %>
               </div>
@@ -233,17 +233,13 @@
                 </div>
               </div>
             </div> %>
-            <%# <button data-testid="submit-email-registration" type="submit" class="outfit font-bold transition ease-in-out delay-75 hover:opacity-80 py-2 px-4 h-12 w-full rounded-xl cursor-pointer bg-peach border-peach text-xl hover:no-underline focus:no-underline" name="submitRegistrationButton" data-element-name="register-submit-btn" data-event-label="register-with-email-signup" style="color: white;">
+            <%# <button data-testid="submit-email-registration" type="submit" class="outfit font-bold transition ease-in-out delay-75 hover:opacity-80 py-2 px-4 h-12 w-full rounded-xl cursor-pointer bg-viridian border-peach text-xl hover:no-underline focus:no-underline" name="submitRegistrationButton" data-element-name="register-submit-btn" data-event-label="register-with-email-signup" style="color: white;">
               Sign up
             </button> %>
-            <%= f.submit "Log in", class: "outfit z-10 text-white font-bold transition ease-in-out delay-75 hover:opacity-80 py-2 px-4 h-12 w-full rounded-xl cursor-pointer bg-peach border-peach text-xl hover:no-underline focus:no-underline" %>
+            <%= f.submit "Log in", class: "outfit z-10 text-white font-bold transition ease-in-out delay-75 hover:opacity-80 py-2 px-4 h-12 w-full rounded-xl cursor-pointer bg-indigo-600 text-xl hover:no-underline focus:no-underline" %>
             <%# <p class="ds-font-small text-center">
               By signing up, you agree to <a class="underline text-viridian" href="https://www.meetup.com/terms/" data-element-name="register-terms-link">Terms of Service</a>, <a class="underline text-viridian" href="https://www.meetup.com/privacy/" data-element-name="register-privacy-link">Privacy Policy</a>, and <a class="underline text-viridian" href="https://www.meetup.com/cookie_policy/" data-element-name="register-cookies-link">Cookie Policy</a>.
             </p> %>
-          </div>
-          <div class="flex space-x-1 justify-center text-sm">
-            <span>Already a member?</span>
-            <a class="hover:no-underline" href="https://www.meetup.com/login/?returnUri=https%3A%2F%2Fwww.meetup.com%2Fhome" data-element-name="register-log-in-link" style="color: #0D9488;">Log in</a>
           </div>
         <% end %>
         <%# </form> %>
