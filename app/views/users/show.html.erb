@@ -5,27 +5,28 @@
         <div id="profile-photo" class="flex w-full justify-center">
           <div class="xs:block sm:hidden">
             <picture>
-              <img alt="Photo of <%= current_user.name.split(' ')[0] %>" src="<%= current_user.avatar.service_url %>" style="width:128px;height:128px" loading="eager" class="rounded-full object-cover mb-4 block">
+              <img alt="Photo of <%= current_user.name.split(' ')[0].capitalize %>" src="<%= current_user.avatar.attached? ? current_user.avatar.service_url : '' %>" style="width:128px;height:128px" loading="eager" class="rounded-full object-cover mb-4 block">
             </picture>
           </div>
           <div class="flex justify-center hidden sm:block md:hidden">
             <picture>
-              <img alt="Photo of <%= current_user.name.split(' ')[0] %>" src="<%= current_user.avatar.service_url %>" style="width:256px;height:256px" loading="eager" class="rounded-full object-cover mb-8">
+              <img alt="<%= current_user.name.split(' ')[0].capitalize %>" src="<%= current_user.avatar.attached? ? current_user.avatar.service_url : '' %>" style="width:256px;height:256px" loading="eager" class="rounded-full object-cover mb-8">
             </picture>
           </div>
           <div class="w-full hidden md:block">
             <div class="w-full mt-11 flex flex-row justify-end">
               <picture class="w-full max-w-[352px]">
-                <img alt="Photo of <%= current_user.name.split(' ')[0] %>" src="<%= current_user.avatar.service_url %>" style="width:100%;height:100%" loading="eager" class="rounded-full object-cover max-w-[352px] max-h-[352px] min-h-[352px]">
+                <img alt="Photo of <%= current_user.name.split(' ')[0].capitalize %>" src="<%= current_user.avatar.attached? ? current_user.avatar.service_url : '' %>" style="width:100%;height:100%" loading="eager" class="rounded-full object-cover max-w-[352px] max-h-[352px] min-h-[352px]">
               </picture>
             </div>
           </div>
         </div>
+
         <div id="profile-details" class="flex flex-col w-full items-center md:items-start">
           <h1 id="profile-name" class="outfit text-4xl sm:text-5xl font-bold mb-1 sm:mb-5 text-center md:text-left"><%= current_user.name.titleize %> </h1>
           <span id="profile-since-date" class="text-base sm:text-xl font-semibold mt-2 text-center mb-4">Member since <%= current_user.created_at.strftime('%B') %> <%= current_user.created_at.strftime('%Y') %></span>
           <div class="flex flex-col items-center md:items-start space-y-2">
-            <%# <div id="profile-location" class="flex flex-row space-x-2 items-center fill-current text-gray6 font-normal">
+            <div id="profile-location" class="flex flex-row space-x-2 items-center fill-current text-gray-500 font-normal">
               <div style="width:20px;height:20px">
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="injected-svg text-gray6 fill-current" data-src="https://secure.meetupstatic.com/next/images/design-system-icons/map-marker.svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width:20px;height:20px">
@@ -34,8 +35,10 @@
                   </svg>
                 </div>
               </div>
-              <span class="text-gray6">Denver</span>
-            </div> %>
+
+              <span class="text-gray-500"><%= current_user.location %></span>
+            </div>
+
             <%# <div id="profile-events-count" class="flex flex-row space-x-2 items-center fill-current text-gray6 font-normal">
               <div style="width:20px;height:20px">
                 <div>
