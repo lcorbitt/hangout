@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
-  resources :users, only: [:show, :edit]
-  # get '/account/:id/edit', to: 'users#edit'
-  # get '/account', to: 'users#edit'
+  resources :users, only: [:show, :edit, :update]
+
+  namespace :admin do
+    resources :users
+    resources :topics
+  end
 end

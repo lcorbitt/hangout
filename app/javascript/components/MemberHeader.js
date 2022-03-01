@@ -188,7 +188,7 @@ export default function MemberHeader({ avatarUrl, userId }) {
               <BellIcon className="flex-shrink-0 h-5 w-5 text-gray-500 hover:text-gray-900" />
             </a>
 
-            <Popover className="relative -mb-4">
+            <Popover className={`relative ${avatarUrl ? "-mb-4" : "-mb-1"}`}>
               {({ open }) => (
                 <>
                   <Popover.Button
@@ -201,7 +201,10 @@ export default function MemberHeader({ avatarUrl, userId }) {
                     {/* <UserIcon className="flex-shrink-0 h-5 w-5 text-gray-500 hover:text-gray-900" /> */}
 
                     <span id="avatar_img" className="overflow-hidden bg-gray-200 mx-auto h-10 w-10 bg-center bg-cover items-center inline-flex relative align-middle" style={{borderRadius: '999px'}}>
-                      <img src={avatarUrl} />
+                      {avatarUrl
+                        ? <img src={avatarUrl} />
+                        : <UserIcon className="flex-shrink-0 mx-auto h-5 w-5 text-gray-500 hover:text-gray-900" />
+                      }
                     </span>
 
                     <ChevronDownIcon
@@ -293,7 +296,7 @@ export default function MemberHeader({ avatarUrl, userId }) {
           <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
             <div className="pt-5 pb-6 px-5">
               <div className="flex items-center justify-between">
-                <span id="avatar_img" class="overflow-hidden bg-gray-200 h-16 w-16 bg-center bg-cover items-center inline-flex relative align-middle" style={{borderRadius: '999px'}}>
+                <span id="avatar_img" className="overflow-hidden bg-gray-200 h-16 w-16 bg-center bg-cover items-center inline-flex relative align-middle" style={{borderRadius: '999px'}}>
                   <img src={avatarUrl} />
                 </span>
                 <div className="-mr-2">

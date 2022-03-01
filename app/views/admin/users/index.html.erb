@@ -1,0 +1,32 @@
+<div class="flex items-center justify-center">
+	<div class="container">
+    <div>
+      <h2 class="outfit text-3xl sm:text-5xl font-bold mb-5">Users</h2>
+    </div>
+
+		<table id="users_table" class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg mb-10">
+			<thead class="text-white">
+				<tr class="bg-viridian flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+        	<th class="p-3 text-left">ID</th>
+					<th class="p-3 text-left">Name</th>
+					<th class="p-3 text-left">Email</th>
+					<th class="p-3 text-left">Created</th>
+          <th class="p-3 text-left">Role</th>
+					<th class="p-3 text-left" width="110px">Actions</th>
+				</tr>
+			</thead>
+			<tbody class="flex-1 sm:flex-none">
+        <% for u in User.all.order(created_at: :desc) do %>
+          <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+            <td class="border-grey-light border hover:bg-gray-100 p-3"><%= u.id %></td>
+            <td class="border-grey-light border hover:bg-gray-100 p-3"><%= u.name %></td>
+            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><%= u.email %></td>
+						<td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><%= u.created_at.strftime("%m-%d-%Y") %></td>
+            <td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><%= u.roles.map(&:name).sort.join(", ") %></td>
+            <td class="border-grey-light border hover:bg-gray-100 p-3 text-peach hover:text-peach hover:font-medium cursor-pointer">Delete</td>
+          </tr>
+        <% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,1 +1,117 @@
-<p>Hello from users#edit</p>
+<div aria-live="polite" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="pl-0 pr-0 overflow-hidden sm:pl-10 sm:pr-10 a27i9ef relative sm:block bg-white rounded-lg shadow-lg pl-12 pr-10 pt-9 pb-8 md:max-w-prose mx-auto mb-10" style="opacity: 1; transform: none;">
+  <div class="sm:block">
+    <div class="flex flex-col items-center px-6 sm:px-0">
+      <section class="w-full sbdsy28 flex flex-col items-center" data-event-category="Member Registration">
+        <svg class="top-0 left-0 absolute" width="119" height="164" viewBox="0 0 119 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M110.828 64.5715C101.08 79.2181 80.6995 88.0884 67.5824 96.1073C54.4151 104.318 48.6319 111.606 41.0813 120.581C33.4603 129.434 24.3129 139.832 9.61932 149.588C-5.02416 159.151 -25.2843 167.951 -36.8417 161.418C-48.3991 154.886 -51.3743 133.091 -50.9515 115.473C-50.5287 97.8547 -46.6375 84.533 -50.5238 68.9552C-54.2191 53.4277 -65.6216 35.7651 -63.9307 22.2731C-62.1193 8.71038 -47.2849 -0.802786 -32.0859 -4.68559C-16.8165 -8.44734 -1.25282 -6.69978 17.5823 -12.3907C36.2264 -18.132 58.3329 -31.2614 75.7556 -28.8186C93.2284 -26.5675 106.279 -8.57278 113.211 10.5755C119.953 29.6734 120.767 49.9753 110.828 64.5715Z" fill="#0D9488" fill-opacity="0.1"></path>
+        </svg>
+        <svg class="bottom-8 right-0 absolute" width="91" height="180" viewBox="0 0 91 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M31.107 139.602C20.1459 122.471 5.63877 107.706 1.47524 89.707C-2.68829 71.7083 3.60187 50.5323 18.4541 39.4806C33.1962 28.3731 56.4501 27.2159 73.5743 25.334C90.5286 23.5146 101.413 20.8522 114.992 14.5031C128.68 8.20975 145.014 -1.94425 157.075 0.444413C169.135 2.83308 176.924 17.7644 182.153 32.2917C187.491 46.8747 190.44 60.9911 187.448 73.7358C184.515 86.3623 175.642 97.617 169.461 110.382C163.279 123.147 159.789 137.422 151.192 145.4C142.764 153.315 129.179 154.76 112.602 162.117C95.9148 169.419 76.1862 182.459 62.6946 179.347C49.203 176.234 41.8981 156.795 31.107 139.602Z" fill="#4F46E5" fill-opacity="0.1"></path>
+        </svg>
+        <svg class="bottom-24 right-0 absolute" width="20" height="208" viewBox="0 0 20 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.5684 161.408C12.928 141.862 1.19431 125.051 0.648726 104.462C0.103153 83.8722 10.8462 59.5676 28.2254 46.7997C45.5039 33.9689 69.4031 32.4757 87.2136 30.1965C104.838 27.9902 116.46 24.8618 131.579 17.4905C146.798 10.1822 165.5 -1.56785 177.283 1.08179C189.066 3.73141 193.929 20.7808 196.27 37.3857C198.712 54.0536 198.817 70.2042 193.159 84.8261C187.586 99.3121 176.249 112.269 167.341 126.938C158.434 141.606 151.955 157.984 141.571 167.186C131.372 176.315 117.252 178.067 98.8756 186.615C80.3986 195.1 57.6497 210.181 44.5597 206.712C31.4697 203.244 28.0231 181.027 20.5684 161.408Z" fill="#EF4444" fill-opacity="0.1"></path>
+        </svg>
+        <span class="sr-only" aria-live="polite">You are on "email sign up" view</span>
+        <%= form_for current_user, url: user_path(current_user.id), action: :update  do |f| %>
+          <%= render "devise/shared/error_messages", resource: current_user %>
+
+          <div class="flex flex-col items-start">
+            <h1 class="outfit text-left text-2xl sm:text-3xl font-semibold mb-2">Edit your profile</h1>
+          </div>
+          <div class="w-full flex flex-col space-y-6 mb-4 mt-8">
+            <div class="flex flex-col-reverse">
+              <div id="name-error" class="text-xs text-gray mt-1">
+                <span class="sr-only">Error:&nbsp;</span>
+                Add a photo so other members know who you are
+              </div>
+
+              <label id="update_user_upload_label" class="p-2 bg-viridian text-center text-white rounded mt-4 hover:cursor-pointer transition ease-in-out delay-75 hover:opacity-80">
+                Upload a photo
+                <span style="display:none;">
+                  <%= f.file_field :avatar, accept: "image/png,image/jpeg", id: "update_user_avatar_input" %>
+                </span>
+              </label>
+
+              <span id="avatar_img" class="overflow-hidden bg-gray-200 mx-auto h-[120px] w-[120px] bg-center bg-cover items-center inline-flex relative align-middle" style="border-radius: 999px;">
+                <% if !current_user.avatar.attached? %>
+                  <img src="<%= image_url('avatar.svg')%>" id="update_user_no_avatar" class="w-full rounded-lg" style="top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:5rem;max-width:100%;min-height:5rem;max-height:100%;object-fit:cover">
+                <% else %>
+                  <img src="<%= image_url(current_user.avatar.service_url)%>" id="update_user_avatar">
+                <% end %>
+
+                <img id="update_user_avatar_preview" />
+              </span>
+            </div>
+
+            <div class="flex flex-col-reverse">
+              <div id="name-error" class="hidden text-xs text-red mt-1">
+                <span class="sr-only">Error:&nbsp;</span>
+                Name is required
+              </div>
+              <div id="name-error" class="text-xs text-gray mt-1">
+                <span class="sr-only">Error:&nbsp;</span>
+                Your name will be public on your Hangout profile
+              </div>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", required: true, class: "w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" %>
+
+              <div class="w-full flex flex-row items-baseline justify-between">
+                <%= f.label :name, "Your name", class: "mb-1 font-medium" %>
+              </div>
+            </div>
+
+            <div class="w-full relative flex flex-col-reverse">
+              <span class="text-gray text-xs mt-1">
+                We’ll use your email address to send you updates
+              </span>
+              <%= f.email_field :email, autocomplete: "email", placeholder: "example@email.com", class: "transition-colors w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" %>
+              <div class="w-full flex flex-row items-baseline justify-between">
+                <%= f.label :email, "Email address", required: true, class: "mb-1 font-medium" %>
+              </div>
+            </div>
+
+            <%# <div class="w-full relative space-y-2"> %>
+              <%# <div class="w-full relative flex flex-col-reverse"> %>
+                <%# <span class="text-gray text-xs mt-1"> %>
+                  <%# 6 characters minimum %>
+                <%# </span> %>
+
+                <%# <%= f.password_field :password, autocomplete: "new-password", class: "transition-colors w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" %>
+
+                <%# <div class="w-full flex flex-row items-baseline justify-between xs:justify-start space-x-1 xs:items-center"> %>
+                  <%# <%= f.label :password, "Password", class: "mb-1 font-medium" %>
+
+                  <%# <button aria-label="Your password must be at least 10 characters, and can't have 3 of the same characters in a row. To improve password strength, use a mix of upper case, lower case, numbers, and symbols." class="mb-1.5 rounded-full bg-white"> %>
+                    <%# <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#A2A2A2" role="presentation"> %>
+                      <%# <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44772 13 8ZM12 11C12.4142 11 12.75 11.3358 12.75 11.75V17.25C12.75 17.6642 12.4142 18 12 18C11.5858 18 11.25 17.6642 11.25 17.25V11.75C11.25 11.3358 11.5858 11 12 11Z"></path> %>
+                    <%# </svg> %>
+                  <%# </button> %>
+                <%# </div> %>
+              <%# </div> %>
+            <%# </div> %>
+
+            <%# <div class="w-full relative"> %>
+              <%# <div class="w-full relative flex flex-col-reverse"> %>
+                <%# <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "transition-colors w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" %>
+                <%# <div class="w-full flex flex-row items-baseline justify-between xs:justify-start space-x-1 xs:items-center"> %>
+                  <%# <%= f.label :password_confirmation, "Password Confirmation", class: "mb-1 font-medium" %>
+                <%# </div> %>
+              <%# </div> %>
+            <%# </div> %>
+
+            <div class="w-full relative">
+              <div class="w-full relative flex flex-col-reverse">
+                <%= f.text_field :location, placeholder: "Enter a location", autocomplete: "on", id: "searchTextField", class: "transition-colors w-full h-10 border border-gray-400 rounded-lg px-3 py-2 hover:border-gray-600 outline-none focus:border-viridian" %>
+
+                <div class="w-full flex flex-row items-baseline justify-between xs:justify-start space-x-1 xs:items-center">
+                  <%= f.label :location, "Location", class: "mb-1 font-medium" %>
+                </div>
+              </div>
+            </div>
+
+            <%= f.submit "Update", class: "outfit z-10 text-white font-bold transition ease-in-out delay-75 hover:opacity-80 py-2 px-4 h-12 w-full rounded-xl cursor-pointer bg-indigo-600 text-xl hover:no-underline focus:no-underline" %>
+          </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>

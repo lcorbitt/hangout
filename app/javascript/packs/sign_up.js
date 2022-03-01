@@ -1,7 +1,6 @@
 document.addEventListener('turbolinks:load', () => {
   const avatar_input = document.querySelector('#sign_up_avatar_input')
   const no_avatar = document.querySelector('#sign_up_no_avatar')
-  const upload_label = document.querySelector('#sign_up_upload_label')
 
   if (avatar_input) {
     avatar_input.onchange = () => {

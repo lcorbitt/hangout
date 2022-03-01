@@ -112,6 +112,8 @@ GEM
       railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.8.1)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -197,6 +199,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rolify (6.0.0)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -266,18 +269,20 @@ DEPENDENCIES
   city-state
   devise
   dotenv-rails
+  faker
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
-  pry-rails (~> 0.3.4)
+  pry-rails
   puma (~> 4.1)
   rails (~> 6.0.4, >= 6.0.4.6)
   react-rails
+  rolify
   sass-rails (>= 6)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  tailwindcss-rails (~> 2.0)
+  tailwindcss-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
