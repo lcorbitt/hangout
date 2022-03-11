@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  resources :topics
   resources :users, only: [:show, :edit, :update]
 
   namespace :admin do

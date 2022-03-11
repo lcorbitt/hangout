@@ -32,6 +32,7 @@ gem 'aws-sdk-s3'
 gem 'city-state'
 gem 'devise'
 gem 'dotenv-rails'
+gem 'pundit'
 gem 'react-rails'
 gem "rolify"
 gem "tailwindcss-rails"
@@ -41,6 +42,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'faker'
+  gem 'ruby_jard'
 end
 
 group :development do
