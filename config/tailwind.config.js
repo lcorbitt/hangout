@@ -27,7 +27,7 @@ module.exports = {
       zinc: colors.zinc,
       neutral: colors.neutral,
       stone: colors.stone,
-      red: colors.red,
+      red: '#EF4444',
       orange: colors.orange,
       amber: colors.amber,
       yellow: colors.yellow,
@@ -45,7 +45,7 @@ module.exports = {
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
-      peach: '#EF4444',
+      peach: '#FFB234',
       viridian: '#0D9488',
       'dark-viridian': '#2D5B54'
     }),

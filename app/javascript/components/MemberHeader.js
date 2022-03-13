@@ -335,7 +335,7 @@ export default function MemberHeader({ avatarUrl, userId }) {
                 <a
                   href="/users/sign_out"
                   data-method="delete"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-peach transition ease-in-out delay-75 hover:opacity-80"
+                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red transition ease-in-out delay-75 hover:opacity-80"
                 >
                   Log out
                 </a>

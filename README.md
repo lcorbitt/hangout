@@ -1,11 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
+3.0.3
 
-Things you may want to cover:
-
-* Ruby version
+## Node version
+14.5.4
 
 * System dependencies
 

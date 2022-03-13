@@ -1,6 +1,9 @@
 class GroupsController < ApplicationController
   before_action :set_user
 
+  def new
+  end
+
   def create
     @group = @user.groups.create(group_params)
     redirect_to group_path(@group)

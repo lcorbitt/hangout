@@ -21,7 +21,7 @@
             <td class="border-grey-light border hover:bg-gray-100 p-3"><%= t.name %></td>
 						<td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><%= t.created_at.strftime("%m-%d-%Y") %></td>
             <td class="border-grey-light border hover:bg-gray-100 p-3 truncate"><%#= Group.where(topic: t).count %></td>
-            <td class="border-grey-light border hover:bg-gray-100 p-3 text-peach hover:text-peach hover:font-medium cursor-pointer">Delete</td>
+            <td class="border-grey-light border hover:bg-gray-100 p-3 text-red hover:text-red hover:font-medium cursor-pointer">Delete</td>
           </tr>
         <% end %>
 			</tbody>

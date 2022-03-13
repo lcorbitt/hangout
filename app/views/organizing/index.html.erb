@@ -5,7 +5,7 @@
 
       <h2 class="outfit text-2xl font-bold mt-2 mb-8">We’ll walk you through a few steps to build your local community</h2>
 
-      <a class="text-center text-sm w-full sm:w-[246px] rounded-lg cursor-pointer text-white py-2 px-4 bg-indigo-600 hover:opacity-80 float-left md:float-none inline-block hover:no-underline transition ease-in-out delay-75" href="/users/162/groups/new">Get started</a>
+      <%= link_to 'Get started', new_user_group_path(current_user.id), class: "text-center text-sm w-full sm:w-[246px] rounded-lg cursor-pointer text-white py-2 px-4 bg-indigo-600 hover:opacity-80 float-left md:float-none inline-block hover:no-underline transition ease-in-out delay-75" %>
     </div>
   </div>
 
@@ -139,7 +139,7 @@
   <div class="flex flex-col mt-12 max-w-[650px] items-center sm:flex-row">
     <div class="flex flex-col w-full sm:mr-5 lg:mr-20 mb-6 sm:mb-0">
       <h2 class="outfit text-2xl font-bold mt-2 mb-8">What would you like your group to do?</h2>
-      <p class="outfit text-sm sm:mb-8">Try starting simple with one of these common event formats.</p>
+      <p class="text-sm sm:mb-8">Try starting simple with one of these common event formats.</p>
     </div>
   </div>
 
@@ -149,7 +149,7 @@
         <div class="content bg-cover bg-center h-32 sm:h-64 rounded-t-lg" style="background-image: url(<%= image_url('friends_playing_game.jpg')%>);"></div>
 
         <div class="mt-6 px-4">
-          <div class="font-bold text-xl mb-2">Hang out</div>
+          <div class="outfit font-bold text-xl mb-2">Hang out</div>
           <p class="text-gray-700 text-sm md:text-base">
             Organize a get-together at a bar or local coffee shop to discuss something you're interested in.
           </p>
@@ -160,7 +160,7 @@
           <div class="content bg-cover bg-center h-32 sm:h-64 rounded-t-lg" style="background-image: url(<%= image_url('beach_yoga.jpg')%>);"></div>
 
           <div class="mt-6 px-4">
-            <div class="font-bold text-xl mb-2">Learn</div>
+            <div class="outfit font-bold text-xl mb-2">Learn</div>
             <p class="text-gray-700 text-sm md:text-base">
               Teach a class, host a workshop, or invite guest speakers to share their expertise with the group.
             </p>
@@ -171,7 +171,7 @@
           <div class="content bg-cover bg-center h-32 sm:h-64 rounded-t-lg" style="background-image: url(<%= image_url('alpine_hiking.jpg')%>);"></div>
 
           <div class="mt-6 px-4">
-            <div class="font-bold text-xl mb-2">Explore</div>
+            <div class="outfit font-bold text-xl mb-2">Explore</div>
             <p class="text-gray-700 text-sm md:text-base">
               Meet for a movie, go for a hike, try a new restaurant, or plan weekend adventures together.
             </p>
@@ -182,7 +182,7 @@
           <div class="content bg-cover bg-center h-32 sm:h-64 rounded-t-lg" style="background-image: url(<%= image_url('networking.jpg')%>);"></div>
 
           <div class="mt-6 px-4">
-            <div class="font-bold text-xl mb-2">Network</div>
+            <div class="outfit font-bold text-xl mb-2">Network</div>
             <p class="text-gray-700 text-sm md:text-base">
               Find space at a bar or professional building to bring people together who work in similar industries.
             </p>
@@ -195,35 +195,49 @@
   <div class="flex flex-col pt-20 max-w-[650px] items-center sm:flex-row">
     <div class="flex flex-col w-full sm:mr-5 lg:mr-20 mb-6 sm:mb-0">
       <h2 class="outfit text-2xl font-bold mt-2 mb-8">How to get started</h2>
-      <p class="outfit text-sm sm:mb-8">Here’s an overview of how you’ll create your Meetup group, from start to finish.</p>
+      <p class="text-sm sm:mb-8">Here’s an overview of how you’ll create your Meetup group, from start to finish.</p>
     </div>
   </div>
 
   <div class="container mx-auto flex items-center max-w-full">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto">
       <div class="flex flex-col justify-center text-6xl rounded-xl h-[250px] w-full">
-        <div class="">
-          <div class="circle mx-auto w-[100px] h-[100px] rounded-full text-center bg-viridian text-3xl text-white leading-[100px] outfit font-bold">1</div>
-          <h3 class="mx-auto text-center font-bold outfit text-base mt-4 mb-8">Create a group</h3>
-          <p class="mx-auto text-center text-sm">Decide what the group is about, who should join, and what you’ll do at your events.</p>
+        <div class="relative h-[150px] w-[150px] mx-auto flex flex-col items-center">
+          <svg class="opacity-80 absolute" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FFB234" d="M68.4,-22.8C76.3,2.1,61.8,33.6,41,46.3C20.2,59.1,-7,53,-30.3,37.1C-53.7,21.2,-73.2,-4.5,-67.6,-26.2C-61.9,-48,-30.9,-65.9,-0.3,-65.8C30.3,-65.7,60.5,-47.6,68.4,-22.8Z" transform="translate(100 100)" />
+          </svg>
+          <p class="z-10 mt-12 text-3xl text-white outfit font-bold">1</p>
         </div>
+
+        <h3 class="mx-auto text-center font-bold outfit text-base mt-4 mb-8">Create a group</h3>
+        <p class="mx-auto text-center text-sm">Decide what the group is about, who should join, and what you’ll do at your events.</p>
       </div>
 
       <div class="flex flex-col justify-center text-6xl rounded-xl h-[250px] w-full">
-        <div class="">
-          <div class="circle mx-auto w-[100px] h-[100px] rounded-full text-center bg-viridian text-3xl text-white leading-[100px] outfit font-bold">2</div>
-          <h3 class="mx-auto text-center font-bold outfit text-base mt-4 mb-8">Review and submit</h3>
-          <p class="mx-auto text-center text-sm">Your group will be reviewed and shared with members who have similar interests.</p>
+        <div class="relative h-[150px] w-[150px] mx-auto flex flex-col items-center">
+          <svg class="opacity-80 absolute -ml-[10px] -mt-[10px]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FFB234" d="M57.9,-17.1C66.5,7.5,58.9,39.1,41.2,50.6C23.5,62,-4.4,53.2,-23.1,38.2C-41.7,23.1,-51.2,1.7,-45.8,-18.6C-40.4,-38.9,-20.2,-58.2,2.2,-58.9C24.7,-59.6,49.4,-41.8,57.9,-17.1Z" transform="translate(100 100)" />
+          </svg>
+          <p class="z-10 mt-12 text-3xl text-white outfit font-bold">2</p>
         </div>
+
+        <h3 class="mx-auto text-center font-bold outfit text-base mt-4 mb-8">Review and submit</h3>
+        <p class="mx-auto text-center text-sm">Your group will be reviewed and shared with members who have similar interests.</p>
       </div>
 
       <div class="flex flex-col justify-center text-6xl rounded-xl h-[250px] w-full">
-        <div class="">
-          <div class="circle mx-auto w-[100px] h-[100px] rounded-full text-center bg-viridian text-3xl text-white leading-[100px] outfit font-bold">3</div>
-          <h3 class="mx-auto text-center font-bold outfit text-base mt-4 mb-8">Plan your first event</h3>
-          <p class="mx-auto text-center text-sm">Use Hangout’s organizer tools to schedule your events and manage your attendee lists.</p>
+        <div class="relative h-[125px] w-[125px] mx-auto flex flex-col items-center">
+          <svg class="opacity-80 absolute -ml-[10px] -mt-[5px]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FFB234" d="M70.3,-21C79.8,6.5,68.6,42.7,43.7,61C18.7,79.3,-19.8,79.8,-39.7,63.2C-59.6,46.7,-61,13.2,-51.3,-14.6C-41.6,-42.3,-20.8,-64.4,4.8,-66C30.4,-67.5,60.8,-48.6,70.3,-21Z" transform="translate(100 100)" />
+          </svg>
+          <p class="z-10 mt-12 text-3xl text-white outfit font-bold">3</p>
         </div>
+
+        <h3 class="mx-auto text-center font-bold outfit text-base mt-4 mb-8">Plan your first event</h3>
+        <p class="mx-auto text-center text-sm">Use Hangout’s organizer tools to schedule your events and manage your attendee lists.</p>
       </div>
+
+
     </div>
   </div>
 
