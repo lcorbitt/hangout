@@ -7,14 +7,16 @@ class UsersController < ApplicationController
   end
 
   def edit
+    authorize @user
   end
 
   def update
-    if current_user.update(update_params)
-      redirect_to "/users/#{current_user.id}", notice: "User updated successfully."
+    authorize @user
+    if @user.update(update_params)
+      redirect_to "/users/#{@user.id}", notice: "Account updated successfully."
     else
-      flash[:errors] = current_user.errors.full_messages
-      redirect_to "/users/#{current_user.id}/edit"
+      flash[:errors] = @user.errors.full_messages
+      redirect_to "/users/#{@user.id}/edit"
     end
   end
 

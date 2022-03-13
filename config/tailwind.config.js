@@ -39,13 +39,15 @@ module.exports = {
       sky: colors.sky,
       blue: colors.blue,
       indigo: colors.indigo,
+      'dark-indigo': '#3C0068',
       violet: colors.violet,
       purple: colors.purple,
       fuchsia: colors.fuchsia,
       pink: colors.pink,
       rose: colors.rose,
       peach: '#EF4444',
-      viridian: '#0D9488'
+      viridian: '#0D9488',
+      'dark-viridian': '#2D5B54'
     }),
     columns: {
       auto: 'auto',

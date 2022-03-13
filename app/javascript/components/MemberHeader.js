@@ -225,7 +225,7 @@ export default function MemberHeader({ avatarUrl, userId }) {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-10 left-1/2 transform -translate-x-96 mt-3 px-2 w-screen max-w-md sm:px-0">
+                    <Popover.Panel className="absolute z-10 left-1/2 transform -translate-x-[7rem] mt-3 px-2 w-36 sm:px-0">
                       <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div className="relative grid gap-4 bg-white px-5 py-6 sm:p-4">
                           {resources.map((item) => (

@@ -8,11 +8,14 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
-  resources :topics
-  resources :users, only: [:show, :edit, :update]
-
   namespace :admin do
     resources :users
     resources :topics
+  end
+
+  resources :organizing, only: [:index]
+
+  resources :users, only: [:show, :edit, :update] do
+    resources :groups
   end
 end

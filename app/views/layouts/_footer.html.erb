@@ -4,9 +4,9 @@
 
 <%# <%= image_tag "wave.svg", class: "-ml-4 -mr-4 sm:-ml-6 sm:-mr-6 md:-ml-8 md:-mr-8 absolute" %>
 
-<div class="curved bg-zinc-800 -ml-4 -mr-4 sm:-ml-6 sm:-mr-6 md:-ml-8 md:-mr-8 px-4 sm:px-6 md:px-8">
+<div class="curved bg-zinc-800 -mx-4 sm:-mx-6 md:-mx-8 px-4 sm:px-6 md:px-8 md">
   <div class="max-w-6xl mx-auto flex mb-10">
-    <a data-element-name="joinMeetup-CTA" data-testid="join-meetup-button" class="w-full md:w-auto rounded-lg cursor-pointer text-white py-2 px-4 bg-zinc-800 border border-white border-solid float-left md:float-none inline-block hover:no-underline transition ease-in-out delay-75 hover:opacity-80" href="#">Start a new group</a>
+    <%= link_to "Start a new group", organizing_index_path, class: "w-full md:w-auto rounded-lg cursor-pointer text-white py-2 px-4 bg-zinc-800 border border-white border-solid float-left md:float-none inline-block hover:no-underline transition ease-in-out delay-75 hover:opacity-80" %>
   </div>
 
   <hr/>
